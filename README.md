@@ -53,33 +53,49 @@ COBOL - Conexão MYSQL via Postgresql remoto
                                                                                                 
                    77  WS-COUNTER                    pic 9(02).                              
                    
-                   EXEC SQL BEGIN DECLARE SECTION END-EXEC.                                         |   Apresentará erro se:  |
-
-                   01  wPOSICAO                PIC  9(04).                        ° Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
-                   01  wSEQUENCIA              PIC  9(06).                        ° Direcionar um File-ID através de uma variável não será aceito.
-                   01  IDSELECT                PIC  9(04).                          EXEMPLO:
-                   01  IDSELECT2               PIC  9(04).                                  77    WS77-RV000000-IDX PIC X(13) VALUE "RV000000.IDX".                             
+                   EXEC SQL BEGIN DECLARE SECTION END-EXEC.                                        
+                   01  wPOSICAO                PIC  9(04).                      
+                   01  wSEQUENCIA              PIC  9(06).                        
+                   01  IDSELECT                PIC  9(04).                         
+                   01  IDSELECT2               PIC  9(04).                                                        
                    01  DATASELECT              PIC  9(10).                          
-                   01  HORASELECT              PIC  9(06).                        ° Variáveis que vão armazenar dados na memória devem ser declaradas 
-                   01  HORASELECT2             PIC  9(06).                          fora da sessão de declaração do SQL.        
+                   01  HORASELECT              PIC  9(06).                       
+                   01  HORASELECT2             PIC  9(06).                         
                    01  hrFORMAT                PIC  9(08).
-                   01  hrFORMATb               PIC  9(08).                        ° Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
+                   01  hrFORMATb               PIC  9(08).                        
                    01  IDMENU                  PIC  9(02).                                                      
-                   01  DBNAME                  PIC  X(30) VALUE SPACE.                       MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
-                   01  USERNAME                PIC  X(30) VALUE SPACE.                       MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <- Move a var. para outra que esteja dentro da 
-                   01  PASSWD                  PIC  X(10) VALUE SPACE.                                                                 sessão de declaração do SQL.
+                   01  DBNAME                  PIC  X(30) VALUE SPACE.                                                                        
+                   01  USERNAME                PIC  X(30) VALUE SPACE.                       
+                   01  PASSWD                  PIC  X(10) VALUE SPACE.                                                        
                     
-                   EXEC SQL END DECLARE SECTION END-EXEC.                                     EXEC SQL                                               
-                                                                                                   DECLARE C1 CURSOR FOR
-                                                                                                   SELECT RecID, RecReg, RecData, RecHora, RecPosicao,
-                                                                                                   RecSequencia
-                                                                                                   FROM Arqrec_MYSQL
-                                                                                                   WHERE (RecPosicao = :wPOSICAO AND  <-- Deve ser usada com ":" para ser reconhecida.
-                                                                                                   RecSequencia = :wSEQUENCIA)  <--------/  (:wPOSICAO, :wSEQUENCIA)
-                                                                                                   ORDER BY RecID, RecData DESC
-                                                                                              END-EXEC
-                    
- -  Após ser compilado, o programa será executado através do script 'reca.sh'.         
+                   EXEC SQL END DECLARE SECTION END-EXEC.
+
+       Apresentará erro se:  
+
+   - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
+   - Direcionar um File-ID através de uma variável não será aceito.
+
+                        EXEMPLO:
+                              77    WS77-RV000000-IDX PIC X(13) VALUE "RV000000.IDX".                             
+                                  
+      - Variáveis que vão armazenar dados na memória devem ser declaradas 
+                            fora da sessão de declaração do SQL.        
+                   
+     - Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
+                                                                        
+                                 MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
+                                 MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <- Move a var. para outra que esteja dentro da 
+                                                                                   sessão de declaração do SQL.
+                                           EXEC SQL                                               
+                                                DECLARE C1 CURSOR FOR
+                                                SELECT RecID, RecReg, RecData, RecHora, RecPosicao,
+                                                RecSequencia
+                                                FROM SUA_TABELA
+                                                WHERE (TBLDATA = :wsDATA AND  <-- Deve ser usada com ":" para ser reconhecida.
+                                                TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
+                                           
+                                           
+ - Após ser compilado, o programa será executado através do script 'reca.sh'.         
 
 
 
