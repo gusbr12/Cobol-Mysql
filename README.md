@@ -1,6 +1,7 @@
 # CobolMysql
-COBOL - Conexão MYSQL via Postgresql remoto
-1.1 - SISTEMA e PROGRAMAS.
+# COBOL - Conexão MYSQL via Postgresql remoto.
+
+# 1.1 - SISTEMA e PROGRAMAS.
     
 !DIST. atuais não são compativeis com a versão necessária do GnuCOBOL!
 
@@ -13,7 +14,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
 
 
 
-1.2 - CONFIGURAÇÃO e AVISOS.
+# 1.2 - CONFIGURAÇÃO e AVISOS.
 
  -  Não é recomendado usar o 'sudo apt update' no terminal APÓS instalar o GnuCOBOL, senão, corre o risco de atualizar o compilador(COBOL) e as funções para gerar arquivos indexados
     pararem de funcionar (ler e gerar arquivos indexados está indisponivel na versão atual do GnuCobol (4.0)).    
@@ -44,7 +45,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
 
 
 
-1.3 - COMPILAÇÃO e MODOS DE USO. 
+# 1.3 - COMPILAÇÃO e MODOS DE USO. 
 
  -  Para compilar os programas foi criado um script em ShellScript com todos os parâmetros necessários (scriptcomp.sh).
  -  O programa que obter conteúdo do OPEN ESQL deve ser compilado com os parâmetros '-static' e '-locesql'.
@@ -70,7 +71,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
                     
                    EXEC SQL END DECLARE SECTION END-EXEC.
 
-Apresentará erro se:  
+# Apresentará erro se:  
 
 - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
 - Direcionar um File-ID através de uma variável não será aceito.
@@ -96,7 +97,7 @@ Apresentará erro se:
                                            
 
 
-1.4 - GUIA DO ESQL
+# 1.4 - GUIA DO ESQL
 
 SQLCODE: https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
 
