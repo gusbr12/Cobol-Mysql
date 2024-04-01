@@ -1,5 +1,4 @@
-# Cobol & Mysql (unix)
-# COBOL - Conexão MYSQL via Postgresql remoto.
+# COBOL - Conexão MYSQL via Postgresql remoto (unix).
 
 # 1.1 - SISTEMA e PROGRAMAS
     
