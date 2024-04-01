@@ -108,6 +108,8 @@
 
 # Fonte dos códigos de erro: 
 http://www.cadcobol.com.br/negcodes.htm   
+
 http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
+
 https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
     
