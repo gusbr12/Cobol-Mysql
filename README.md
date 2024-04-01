@@ -4,12 +4,12 @@ COBOL - Conexão MYSQL via Postgresql remoto
     
     (DIST. atuais não são compativeis com a versão necessária do GnuCOBOL)
 
- ° SISTEMA OPERACIONAL: Linux Mint 21.2 Victoria Cinnamon 5.8.4 
- ° VERSÃO DO COBOL: GnuCOBOL 3.1.2.0
- ° VERSÃO DO GNU COMPILER: GCC version 11.4.0
- ° VERSÃO DO MYSQL: Mysql  Ver 8.0.35
- ° VERSÃO DO POSTGRESQL: PostgreSQL 14.9    
- ° OPEN COBOL ESQL(PRE-COMPILADOR): https://github.com/opensourcecobol/Open-COBOL-ESQL
+  °SISTEMA OPERACIONAL: Linux Mint 21.2 Victoria Cinnamon 5.8.4 
+  °VERSÃO DO COBOL: GnuCOBOL 3.1.2.0
+  °VERSÃO DO GNU COMPILER: GCC version 11.4.0
+  °VERSÃO DO MYSQL: Mysql  Ver 8.0.35
+  °VERSÃO DO POSTGRESQL: PostgreSQL 14.9    
+  °OPEN COBOL ESQL(PRE-COMPILADOR): https://github.com/opensourcecobol/Open-COBOL-ESQL
 
 
 
