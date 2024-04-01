@@ -94,9 +94,6 @@ Apresentará erro se:
                                                 WHERE (TBLDATA = :wsDATA AND  <-- Deve ser usada com ":" para ser reconhecida.
                                                 TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
                                            
-                                           
--Após ser compilado, o programa será executado através do script 'reca.sh'.         
-
 
 
 1.4 - GUIA DO ESQL
