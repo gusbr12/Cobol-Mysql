@@ -1,9 +1,9 @@
-# CobolMysql
+# Cobol & Mysql (unix)
 # COBOL - Conexão MYSQL via Postgresql remoto.
 
-# 1.1 - SISTEMA e PROGRAMAS.
+# 1.1 - SISTEMA e PROGRAMAS
     
-!DIST. atuais não são compativeis com a versão necessária do GnuCOBOL!
+ DIST. atuais não são compativeis com a versão necessária do GnuCOBOL!
 
       -SISTEMA OPERACIONAL: Linux Mint 21.2 Victoria Cinnamon 5.8.4     
       -VERSÃO DO COBOL: GnuCOBOL 3.1.2.0
@@ -14,7 +14,7 @@
 
 
 
-# 1.2 - CONFIGURAÇÃO e AVISOS.
+# 1.2 - CONFIGURAÇÃO e AVISOS
 
  -  Não é recomendado usar o 'sudo apt update' no terminal APÓS instalar o GnuCOBOL, senão, corre o risco de atualizar o compilador(COBOL) e as funções para gerar arquivos indexados
     pararem de funcionar (ler e gerar arquivos indexados está indisponivel na versão atual do GnuCobol (4.0)).    
@@ -45,7 +45,7 @@
 
 
 
-# 1.3 - COMPILAÇÃO e MODOS DE USO. 
+# 1.3 - COMPILAÇÃO e MODOS DE USO
 
  -  Para compilar os programas foi criado um script em ShellScript com todos os parâmetros necessários (scriptcomp.sh).
  -  O programa que obter conteúdo do OPEN ESQL deve ser compilado com os parâmetros '-static' e '-locesql'.
