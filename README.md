@@ -22,18 +22,17 @@ COBOL - Conexão MYSQL via Postgresql remoto
  -  Todos os programas foram instalados pelo terminal com excessão do OPEN COBOL ESQL - (sudo apt install(***)).
 
  -  Será necessário editar as variáveis do sistema, caso não forem editadas, após a instalação de diversos programas ocorre um conflito de diretorios após uma compilação:
-                _______________________________________________________ 
-               |                                                       | 
-               | export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib|
-               |_______________________________________________________|
+
+                                                                      
+                export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+               
 
     
  -  O arquivo "sqlca.cbl"(se encontra na pasta "COPY" do arquivo raiz do pré-compilador ESQL) deve estar presente no mesmo diretório do código que vá utilizar o pre-compilador ESQL.
  -  Há outra forma de utilizar o arquivo sem precisar manter ele no mesmo diretório do código:
-                 ________________________________________________________
-                |                                                        |
-                | export COBCPY= *caminho da raiz do pré-compilador*/copy|
-                |________________________________________________________|    
+
+     export COBCPY= *caminho da raiz do pré-compilador*/copy
+                
     Importante!
             Todos os programas compilados após editar a variavel do sistema(COBCPY) vão utilizar 
             o mesmo diretório para buscar TODOS os 'COPY', então, é recomendado utilizar uma pasta
