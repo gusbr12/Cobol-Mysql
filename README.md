@@ -98,14 +98,15 @@
 
 # 1.4 - GUIA DO ESQL
 
-SQLCODE: https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
+    SQLCODE: https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
 
     0 - A instrução foi executada sem erros.
     1 - A instrução foi executada, mas foi gerado um aviso. Os valores das flags SQLWARN devem ser verificados para determinar o tipo de erro.
     100 - Não foram encontrados dados correspondentes à consulta ou o final do conjunto de resultados foi alcançado. Nenhuma linha foi processada.
     < 0 (negativo) - A instrução não foi executada devido a um erro de aplicativo, banco de dados, sistema ou rede.
 
-Fonte dos códigos de erro: http://www.cadcobol.com.br/negcodes.htm   
-                           http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
-                           https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
+# Fonte dos códigos de erro: 
+                    http://www.cadcobol.com.br/negcodes.htm   
+                    http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
+                    https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
     
