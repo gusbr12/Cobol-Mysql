@@ -4,7 +4,7 @@
    Grande parte do programa (ou toda parte) contém o uso da API Open-Cobol-ESQL(Tokyo System House, opencobol@tsh-world.co.jp) e por parte pode ser complicado de instalar dependendo
    da distribuição linux usada.
    Faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a funcionalidade da API com o GNUCOBOL.
-   Em distribuições REDHAT há muito ser feito para a instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve uma sessão especial para tal sistema.
+   /r Em distribuições REDHAT há muito ser feito para a instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve uma sessão especial para tal sistema.
         
 
 
