@@ -80,7 +80,9 @@
                CONNECT :USERNAME IDENTIFIED BY :PASSWD USING :DBNAME 
            END-EXEC.
            IF  SQLCODE NOT = ZERO PERFORM ERROR-RTN STOP RUN.
-      
+         
+           PERFORM PROGSQL-MENU.     
+  
            
 
            EXEC SQL
@@ -131,4 +133,29 @@
                  DISPLAY "PostgreSQL error" AT 0301 
                  DISPLAY "ERRCODE: "  SQLSTATE AT 0401 
                  DISPLAY SQLERRMC AT 0501
-      *> TO RESTART TRANSACTION, DO ROLLBACK.
+       
+       PROGSQL-MENU. 
+           Display " ___________________________"  AT 1101
+           DISPLAY "|                           |" AT 1201           
+           DISPLAY "| TESTE.               - [1]|" AT 1301
+           DISPLAY "|                           |" AT 1401
+           DISPLAY "|                           |" AT 1501
+           DISPLAY "|                           |" AT 1601
+           DISPLAY "|___________________________|" AT 1701           
+           ACCEPT IDMENU                           AT 1530.       
+           DISPLAY " "                        AT 0501 WITH ERASE EOS
+                 
+       IF  IDMENU = 1
+           PERFORM PROGSQL-TESTE.     
+        PROGSQL-TESTE.
+       
+
+           EXEC SQL
+              DECLARE C1 CURSOR FOR
+              SELECT TBLID, TBLDATA, TBLHora
+              RecSequencia
+              FROM SUA_TABELA                                               
+              ORDER BY TBLID              
+           END-EXEC.      
+
+
