@@ -83,17 +83,16 @@
                    
 - Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
                                                                        
-                                 MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
-                                 MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <- Move a var. para outra que esteja dentro da 
+                      MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
+                      MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <- Move a var. para outra que esteja dentro da 
                                                                                    sessão de declaração do SQL.
-                                           EXEC SQL                                               
-                                                DECLARE C1 CURSOR FOR
-                                                SELECT RecID, RecReg, RecData, RecHora, RecPosicao,
-                                                RecSequencia
-                                                FROM SUA_TABELA
-                                                WHERE (TBLDATA = :wsDATA AND  <-- Deve ser usada com ":" para ser reconhecida.
-                                                TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
-                                           
+                      EXEC SQL                                               
+                           DECLARE C1 CURSOR FOR
+                           SELECT TBLID, TBLData, TBLHora                           
+                           FROM SUA_TABELA
+                           WHERE (TBLDATA = :wsDATA AND  <-- Deve ser usada com ":" para ser reconhecida.
+                           TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
+                      END-EXEC                                           
 
 
 # 1.4 - GUIA DO ESQL
