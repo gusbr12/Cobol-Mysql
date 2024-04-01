@@ -11,7 +11,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
  ° VERSÃO DO POSTGRESQL: PostgreSQL 14.9    
  ° OPEN COBOL ESQL(PRE-COMPILADOR): https://github.com/opensourcecobol/Open-COBOL-ESQL
 
-#######################################################################################################################################################################################
+
 
 1.2 - CONFIGURAÇÃO e AVISOS.
 
@@ -43,7 +43,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
 
 
 
-#######################################################################################################################################################################################
+
 
 1.3 - COMPILAÇÃO e MODOS DE USO. 
 
@@ -82,7 +82,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
                     
  -  Após ser compilado, o programa será executado através do script 'reca.sh'.         
 
-#######################################################################################################################################################################################
+
 
 1.4 - GUIA DO ESQL
 
@@ -97,4 +97,3 @@ Fonte dos códigos de erro: http://www.cadcobol.com.br/negcodes.htm
                            http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
                            https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
     
-#######################################################################################################################################################################################
