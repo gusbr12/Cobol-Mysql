@@ -1,25 +1,24 @@
 # COBOL - Conexão MYSQL via Postgresql remoto (unix).
 
 ## 1.0 - INICIO
-   Grande parte do programa (ou toda parte) contém o uso da API [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL) e por parte pode ser complicado de instalar dependendo
-   da distribuição linux usada.
-   Faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a funcionalidade da API com o GNUCOBOL.
-   Em distribuições REDHAT há muito ser feito para a instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve uma sessão especial para tal sistema.
-        
+
+   Grande parte do programa (ou toda parte) contém o uso da API [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, pode encontrar complicações na instalação
+   dependendo da distribuição linux usada e faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a funcionalidade da API com o GNUCOBOL.
+   Em distribuições REDHAT há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve sairá uma sessão especial para tal sistema.
 
 
 ### 1.1 - SISTEMA e PROGRAMAS
     
  
- > [AVISO!]
+ > [!IMPORTANT]
  > DIST. atuais não funcionam adequadamente com a versão necessária do GnuCOBOL!
 
-      -SISTEMA OPERACIONAL: Linux Mint 21.2 Victoria Cinnamon 5.8.4     
-      -VERSÃO DO COBOL: GnuCOBOL 3.1.2.0
-      -VERSÃO DO GNU COMPILER: GCC version 11.4.0
-      -VERSÃO DO MYSQL: Mysql  Ver 8.0.35
-      -VERSÃO DO POSTGRESQL: PostgreSQL 14.9    
-      -OPEN COBOL ESQL(PRE-COMPILADOR): https://github.com/opensourcecobol/Open-COBOL-ESQL
+   + Linux Mint 21.2 Victoria Cinnamon 5.8.4     
+   + GnuCOBOL 3.1.2.0
+   + GCC version 11.4.0
+   + Mysql  Ver 8.0.35
+   + PostgreSQL 14.9    
+   + [Open Cobol ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL)
 
 
 
@@ -41,15 +40,12 @@
  -  O arquivo "sqlca.cbl"(se encontra na pasta "COPY" do arquivo raiz do pré-compilador ESQL) deve estar presente no mesmo diretório do código que vá utilizar o pre-compilador ESQL.
  -  Há outra forma de utilizar o arquivo sem precisar manter ele no mesmo diretório do código:
 
-     export COBCPY= *caminho da raiz do pré-compilador*/copy
-                
-    Importante!
-            Todos os programas compilados após editar a variavel do sistema(COBCPY) vão utilizar 
-            o mesmo diretório para buscar TODOS os 'COPY', então, é recomendado utilizar uma pasta
-            fixa para colocar todos no mesmo diretório.
-    !Importante
-
-
+                 export COBCPY= *caminho da raiz do pré-compilador*/copy
+    
+> [!WARNING]
+> Todos os programas compilados após editar a variavel do sistema(COBCPY) vão utilizar 
+o mesmo diretório para buscar TODOS os 'COPY', então, é recomendado utilizar uma pasta
+fixa para colocar todos no mesmo diretório.
 
 
 
@@ -60,7 +56,7 @@
  -  O programa que obter conteúdo do OPEN ESQL deve ser compilado com os parâmetros '-static' e '-locesql'.
 
  -  O pré-compilador ESQL não vai reconhecer nenhuma variável que for usada com os comandos ESQL(EXEC SQL, SELECT, ETC) se estiver fora da área de declaração SQL.  
-                                                                                                
+```COBOL                                                                                               
                    77  WS-COUNTER                    pic 9(02).                              
                    
                    EXEC SQL BEGIN DECLARE SECTION END-EXEC.                                        
@@ -77,24 +73,24 @@
                    01  DBNAME                  PIC  X(30) VALUE SPACE.                                                                        
                    01  USERNAME                PIC  X(30) VALUE SPACE.                       
                    01  PASSWD                  PIC  X(10) VALUE SPACE.                                                        
-                    
                    EXEC SQL END DECLARE SECTION END-EXEC.
+```
 
 ## Apresentará erro se:  
 
 - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
 - Direcionar um File-ID através de uma variável não será aceito.
 
-                        EXEMPLO:
-                              77    WS77-RV000000-IDX PIC X(13) VALUE "RV000000.IDX".                             
-                                  
+```COBOL
+                  77    WS77-RV000000-IDX PIC X(13) VALUE "RV000000.IDX".                             
+```     
 - Variáveis que vão armazenar dados na memória devem ser declaradas 
                             fora da sessão de declaração do SQL.        
                    
 - Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
-                                                                       
+```COBOL                                                                      
                       MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
-                      MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <- Move a var. para outra que esteja dentro da 
+                      MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <----  Move a var. para outra que esteja dentro da 
                                                                                    sessão de declaração do SQL.
                       EXEC SQL                                               
                            DECLARE C1 CURSOR FOR
@@ -103,7 +99,7 @@
                            WHERE (TBLDATA = :wsDATA AND  <-- Deve ser usada com ":" para ser reconhecida.
                            TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
                       END-EXEC                                           
-
+```
 
 ### 1.4 - GUIA DO ESQL
 
