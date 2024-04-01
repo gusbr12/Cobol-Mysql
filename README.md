@@ -70,19 +70,19 @@ COBOL - Conexão MYSQL via Postgresql remoto
                     
                    EXEC SQL END DECLARE SECTION END-EXEC.
 
-       Apresentará erro se:  
+Apresentará erro se:  
 
-   - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
-   - Direcionar um File-ID através de uma variável não será aceito.
+- Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
+- Direcionar um File-ID através de uma variável não será aceito.
 
                         EXEMPLO:
                               77    WS77-RV000000-IDX PIC X(13) VALUE "RV000000.IDX".                             
                                   
-      - Variáveis que vão armazenar dados na memória devem ser declaradas 
+- Variáveis que vão armazenar dados na memória devem ser declaradas 
                             fora da sessão de declaração do SQL.        
                    
-     - Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
-                                                                        
+- Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
+                                                                       
                                  MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
                                  MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <- Move a var. para outra que esteja dentro da 
                                                                                    sessão de declaração do SQL.
@@ -95,7 +95,7 @@ COBOL - Conexão MYSQL via Postgresql remoto
                                                 TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
                                            
                                            
- - Após ser compilado, o programa será executado através do script 'reca.sh'.         
+-Após ser compilado, o programa será executado através do script 'reca.sh'.         
 
 
 
