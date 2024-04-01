@@ -1,16 +1,18 @@
 # COBOL - Conexão MYSQL via Postgresql remoto (unix).
 
-# 1.0 - INICIO
-   Grande parte do programa (ou toda parte) contém o uso da API Open-Cobol-ESQL(Tokyo System House, opencobol@tsh-world.co.jp) e por parte pode ser complicado de instalar dependendo
+## 1.0 - INICIO
+   Grande parte do programa (ou toda parte) contém o uso da API [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL) e por parte pode ser complicado de instalar dependendo
    da distribuição linux usada.
    Faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a funcionalidade da API com o GNUCOBOL.
-   /r Em distribuições REDHAT há muito ser feito para a instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve uma sessão especial para tal sistema.
+   Em distribuições REDHAT há muito ser feito para a instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve uma sessão especial para tal sistema.
         
 
 
-# 1.1 - SISTEMA e PROGRAMAS
+### 1.1 - SISTEMA e PROGRAMAS
     
- DIST. atuais não são compativeis com a versão necessária do GnuCOBOL!
+ 
+ > [AVISO!]
+ > DIST. atuais não funcionam adequadamente com a versão necessária do GnuCOBOL!
 
       -SISTEMA OPERACIONAL: Linux Mint 21.2 Victoria Cinnamon 5.8.4     
       -VERSÃO DO COBOL: GnuCOBOL 3.1.2.0
@@ -21,7 +23,7 @@
 
 
 
-# 1.2 - CONFIGURAÇÃO e AVISOS
+### 1.2 - CONFIGURAÇÃO e AVISOS
 
  -  Não é recomendado usar o 'sudo apt update' no terminal APÓS instalar o GnuCOBOL, senão, corre o risco de atualizar o compilador(COBOL) e as funções para gerar arquivos indexados
     pararem de funcionar (ler e gerar arquivos indexados está indisponivel na versão atual do GnuCobol (4.0)).    
@@ -52,7 +54,7 @@
 
 
 
-# 1.3 - COMPILAÇÃO e MODOS DE USO
+### 1.3 - COMPILAÇÃO e MODOS DE USO
 
  -  Para compilar os programas foi criado um script em ShellScript com todos os parâmetros necessários (scriptcomp.sh).
  -  O programa que obter conteúdo do OPEN ESQL deve ser compilado com os parâmetros '-static' e '-locesql'.
@@ -78,7 +80,7 @@
                     
                    EXEC SQL END DECLARE SECTION END-EXEC.
 
-# Apresentará erro se:  
+## Apresentará erro se:  
 
 - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
 - Direcionar um File-ID através de uma variável não será aceito.
@@ -103,7 +105,7 @@
                       END-EXEC                                           
 
 
-# 1.4 - GUIA DO ESQL
+### 1.4 - GUIA DO ESQL
 
   SQLCODE: https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
   
@@ -113,7 +115,7 @@
     100 - Não foram encontrados dados correspondentes à consulta ou o final do conjunto de resultados foi alcançado. Nenhuma linha foi processada.
     < 0 (negativo) - A instrução não foi executada devido a um erro de aplicativo, banco de dados, sistema ou rede.
 
-# Fonte dos códigos de erro: 
+## Fonte dos códigos de erro: 
 http://www.cadcobol.com.br/negcodes.htm   
 
 http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
