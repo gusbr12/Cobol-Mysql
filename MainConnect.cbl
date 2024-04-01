@@ -147,9 +147,43 @@
                  
        IF  IDMENU = 1
            PERFORM PROGSQL-TESTE.     
-        PROGSQL-TESTE.
        
+       PROGSQL-SKET.
+              DISPLAY " " AT 0501 WITH ERASE EOS.                       
+           DISPLAY "TBLId: "           AT 0501
+           DISPLAY D-id            AT 0508            
+           DISPLAY "TBLData: "         AT 0801
+           DISPLAY D-data          AT 0810
+           DISPLAY "TBLHora: "         AT 0901
+           DISPLAY D-hora          AT 0910
+           
+           
+      *--------------------------------------------
+      *    ACCEPT skipscreen WITH NO-ECHO AT 1801 
+           ACCEPT skipscreen FROM ESCAPE KEY.
+           DISPLAY skipscreen at 1815
+           
 
+       IF  skipscreen = "@"
+           OPEN OUTPUT ARQ-GRAVA           
+           
+           EXEC SQL 
+               CLOSE C1 
+           END-EXEC                                    
+           EXEC SQL
+                DISCONNECT ALL
+           END-EXEC        
+                                                                                                                                                                                      
+           MOVE D-REC      TO  ARQ-ESCREVE
+           
+ 
+           WRITE ARQ-ESCREVE
+           CLOSE ARQ-GRAVA
+           STOP RUN.              
+              
+       
+       PROGSQL-TESTE.
+       
            EXEC SQL
               DECLARE C1 CURSOR FOR
               SELECT TBLID, TBLDATA, TBLHora
