@@ -1,11 +1,10 @@
-# COBOL - Conexão MYSQL via Postgresql remoto (unix).
+# COBOL - Conexão MYSQL via PostgreSQL remoto (unix).
 
-## INICIO
-
-   Grande parte do programa contém o uso do pré-compilador [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, pode encontrar complicações na instalação
-   dependendo da distribuição linux usada e faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a funcionalidade do pré-compilador com o GNUCOBOL.
-   Em sistemas REDHAT/CentOs há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve sairá uma sessão especial para tal sistema.
-
+ 
+   Grande parte do programa contém o uso do pré-compilador [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, há a possibilidade
+   encontrar complicações na instalação dependendo da distribuição linux usada e faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a 
+   funcionalidade do pré-compilador com o GNUCOBOL.Em sistemas REDHAT/CentOs há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em      breve sairá uma sessão especial para tal sistema.
+##
 
 ### SISTEMA e PROGRAMAS
     
@@ -20,7 +19,7 @@
    + PostgreSQL 14.9    
    + [Open Cobol ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL)
 
-
+##
 
 ### CONFIGURAÇÃO e AVISOS
 
@@ -47,7 +46,7 @@
 o mesmo diretório para buscar TODOS os 'COPY', então, é recomendado utilizar uma pasta
 fixa para colocar todos no mesmo diretório.
 
-
+##
 
 
 ### COMPILAÇÃO e MODOS DE USO
@@ -75,8 +74,8 @@ fixa para colocar todos no mesmo diretório.
                    01  PASSWD                  PIC  X(10) VALUE SPACE.                                                        
                    EXEC SQL END DECLARE SECTION END-EXEC.
 ```
-
-## Erros possíveis  
+##
+### Erros possíveis  
 
 > [!CAUTION]
 > Apresentará erro se executar o programa compilado no modo root.        
@@ -111,7 +110,7 @@ fixa para colocar todos no mesmo diretório.
                       END-EXEC                                           
 ```
 
-
+##
 
 ### GUIA DO ESQL
 
