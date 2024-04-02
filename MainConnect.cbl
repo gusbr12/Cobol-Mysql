@@ -112,11 +112,11 @@
            DISPLAY "SQLCODE: " SQLCODE AT 0201. 
            EVALUATE SQLCODE
               WHEN  +10
-                 DISPLAY "Record not found" AT 0301
+                 DISPLAY "O Registro não foi encontrado!" AT 0301
               WHEN  -01
-                 DISPLAY "Connection falied" AT 0301
+                 DISPLAY "A conexão falhou!" AT 0301
               WHEN  -20
-                 DISPLAY "Internal error" AT 0301 
+                 DISPLAY "Erro interno!" AT 0301 
               WHEN  -30
                  DISPLAY "PostgreSQL error" AT 0301 
                  DISPLAY "ERRCODE: "  SQLSTATE AT 0401 
@@ -172,7 +172,6 @@
            EXEC SQL
               DECLARE C1 CURSOR FOR
               SELECT TBLID, TBLDATA, TBLHora
-              RecSequencia
               FROM SUA_TABELA                                               
               ORDER BY TBLID              
            END-EXEC.      
