@@ -23,12 +23,8 @@
 
 ### CONFIGURAÇÃO e AVISOS
 
- -  Não é recomendado usar o 'sudo apt update' no terminal APÓS instalar o GnuCOBOL, senão, corre o risco de atualizar o compilador(COBOL) e as funções para gerar arquivos indexados
-    pararem de funcionar (ler e gerar arquivos indexados está indisponivel na versão atual do GnuCobol (4.0)).    
- -  O pré-compilador Open Cobol ESQL possui um manual nos arquivos de instalações(README), para testar basta digitar o comando ocesql no terminal e deve retornar as infos do pré-com
+ -  O pré-compilador Open Cobol ESQL possui um manual nos arquivos de instalações(README), para testar basta digitar o comando **ocesql** no terminal e deve retornar as infos do pré-com
     pilador.  
- -  Todos os programas foram instalados pelo terminal com exceção do OPEN COBOL ESQL - (sudo apt install(***)).
-
  -  Será necessário editar as variáveis do sistema, caso não forem editadas, após a instalação de diversos programas ocorre um conflito de diretorios após uma compilação:
 
                                                                       
@@ -128,7 +124,7 @@ fixa para colocar todos no mesmo diretório.
   |     <0       |  A instrução não foi executada devido a um erro de aplicativo, banco de dados, sistema ou rede|
  
   
-###
+##
    
 
 ### Fonte dos códigos de erro: 
@@ -137,4 +133,4 @@ http://www.cadcobol.com.br/negcodes.htm
 http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
 
 https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
-##    
+    
