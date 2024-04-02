@@ -1,13 +1,13 @@
 # COBOL - Conexão MYSQL via Postgresql remoto (unix).
 
-## 1.0 - INICIO
+## INICIO
 
    Grande parte do programa (ou toda parte) contém o uso da API [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, pode encontrar complicações na instalação
    dependendo da distribuição linux usada e faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a funcionalidade da API com o GNUCOBOL.
    Em distribuições REDHAT há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve sairá uma sessão especial para tal sistema.
 
 
-### 1.1 - SISTEMA e PROGRAMAS
+### SISTEMA e PROGRAMAS
     
  
  > [!IMPORTANT]
@@ -22,7 +22,7 @@
 
 
 
-### 1.2 - CONFIGURAÇÃO e AVISOS
+### CONFIGURAÇÃO e AVISOS
 
  -  Não é recomendado usar o 'sudo apt update' no terminal APÓS instalar o GnuCOBOL, senão, corre o risco de atualizar o compilador(COBOL) e as funções para gerar arquivos indexados
     pararem de funcionar (ler e gerar arquivos indexados está indisponivel na versão atual do GnuCobol (4.0)).    
@@ -50,7 +50,7 @@ fixa para colocar todos no mesmo diretório.
 
 
 
-### 1.3 - COMPILAÇÃO e MODOS DE USO
+### COMPILAÇÃO e MODOS DE USO
 
  -  Para compilar os programas foi criado um script em ShellScript com todos os parâmetros necessários (scriptcomp.sh).
  -  O programa que obter conteúdo do OPEN ESQL deve ser compilado com os parâmetros '-static' e '-locesql'.
@@ -76,8 +76,10 @@ fixa para colocar todos no mesmo diretório.
                    EXEC SQL END DECLARE SECTION END-EXEC.
 ```
 
-## Apresentará erro se:  
+## Erros possíveis  
 
+> [!CAUTION]
+> Apresentará erro se executar o programa compilado no modo root.        
 - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
 - Direcionar um File-ID através de uma variável.
 
@@ -89,23 +91,29 @@ fixa para colocar todos no mesmo diretório.
                   EXEC SQL END DECLARE SECTION END-EXEC.
 ```     
 - Variáveis que vão armazenar dados na memória devem ser declaradas 
-                            fora da sessão de declaração do SQL.        
-                   
+                            fora da sessão de declaração do SQL.                   
 - Para usar variáveis com dados armazenados na memória deve ser usado da seguinte forma:
+> [!IMPORTANT]
+>> A var. deve ser movida para uma var. que esteja dentro da sessão de declaração do SQL.
+>>> A variavel movida deve ser usada com ":" para ser reconhecida.
+ 
+  
 ```COBOL                                                                      
-                      MOVE WS03-RECPOSICAO   TO wPOSICAO                                                    
-                      MOVE WS03-RECSEQUENCIA TO wSEQUENCIA   <----  Move a var. para outra que esteja dentro da 
-                                                                                   sessão de declaração do SQL.
+                      MOVE WS01-HORA   TO wsHORA                                                    
+                      MOVE ws01-DATA   TO wsDATA             
+                                                                                   
                       EXEC SQL                                               
                            DECLARE C1 CURSOR FOR
                            SELECT TBLID, TBLData, TBLHora                           
                            FROM SUA_TABELA
-                           WHERE (TBLDATA = :wsDATA AND  <-- Deve ser usada com ":" para ser reconhecida.
-                           TBLHORA = :wsHORA)  <--------  (:wsDATA, :wsHORA)
+                           WHERE (TBLDATA = :wsDATA AND   
+                           TBLHORA = :wsHORA)           
                       END-EXEC                                           
 ```
 
-### 1.4 - GUIA DO ESQL
+
+
+### GUIA DO ESQL
 
   SQLCODE: https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
   
