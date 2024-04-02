@@ -79,7 +79,7 @@ fixa para colocar todos no mesmo diretório.
 ## Apresentará erro se:  
 
 - Declarar uma variável no level 77, pois, não é aceito na sessão de declaração do SQL.                       
-- Direcionar um File-ID através de uma variável não será aceito.
+- Direcionar um File-ID através de uma variável.
 
 ```COBOL
                   77    WS77-ARQUIVO PIC X(13) VALUE "texto.txt".                             
