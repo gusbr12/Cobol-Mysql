@@ -57,11 +57,11 @@ fixa para colocar todos no mesmo diretório.
 
  -  O pré-compilador ESQL não vai reconhecer nenhuma variável que for usada com os comandos ESQL(EXEC SQL, SELECT, ETC) se estiver fora da área de declaração SQL.  
 ```COBOL                                                                                               
-                   77  WS-COUNTER                    pic 9(02).                              
-                   
+                   77  WS-COUNT                PIC  9(02).                              
+                    
                    EXEC SQL BEGIN DECLARE SECTION END-EXEC.                                        
-                   01  wPOSICAO                PIC  9(04).                      
-                   01  wSEQUENCIA              PIC  9(06).                        
+                   01  wsVAR1                  PIC  9(04).                      
+                   01  wsVAR2                  PIC  9(06).                        
                    01  IDSELECT                PIC  9(04).                         
                    01  IDSELECT2               PIC  9(04).                                                        
                    01  DATASELECT              PIC  9(10).                          
