@@ -56,22 +56,22 @@ fixa para colocar todos no mesmo diretório.
 
  -  O pré-compilador ESQL não vai reconhecer nenhuma variável que for usada com os comandos ESQL(EXEC SQL, SELECT, ETC) se estiver fora da área de declaração SQL.  
 ```COBOL                                                                                               
-                   77  WS-COUNT                PIC  9(02).                              
+                   77  WS-COUNT                PIC  9(02). 
                     
-                   EXEC SQL BEGIN DECLARE SECTION END-EXEC.                                        
-                   01  wsVAR1                  PIC  9(04).                      
-                   01  wsVAR2                  PIC  9(06).                        
-                   01  IDSELECT                PIC  9(04).                         
-                   01  IDSELECT2               PIC  9(04).                                                        
-                   01  DATASELECT              PIC  9(10).                          
-                   01  HORASELECT              PIC  9(06).                       
-                   01  HORASELECT2             PIC  9(06).                         
+                   EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+                   01  wsVAR1                  PIC  9(04). 
+                   01  wsVAR2                  PIC  9(06). 
+                   01  IDSELECT                PIC  9(04). 
+                   01  IDSELECT2               PIC  9(04). 
+                   01  DATASELECT              PIC  9(10).  
+                   01  HORASELECT              PIC  9(06).  
+                   01  HORASELECT2             PIC  9(06).  
                    01  hrFORMAT                PIC  9(08).
-                   01  hrFORMATb               PIC  9(08).                        
-                   01  IDMENU                  PIC  9(02).                                                      
-                   01  DBNAME                  PIC  X(30) VALUE SPACE.                                                                        
-                   01  USERNAME                PIC  X(30) VALUE SPACE.                       
-                   01  PASSWD                  PIC  X(10) VALUE SPACE.                                                        
+                   01  hrFORMATb               PIC  9(08).  
+                   01  IDMENU                  PIC  9(02).  
+                   01  DBNAME                  PIC  X(30) VALUE SPACE.
+                   01  USERNAME                PIC  X(30) VALUE SPACE.
+                   01  PASSWD                  PIC  X(10) VALUE SPACE.
                    EXEC SQL END DECLARE SECTION END-EXEC.
 ```
 ##
@@ -128,13 +128,13 @@ fixa para colocar todos no mesmo diretório.
   |     <0       |  A instrução não foi executada devido a um erro de aplicativo, banco de dados, sistema ou rede|
  
   
-
+###
    
 
-## Fonte dos códigos de erro: 
+### Fonte dos códigos de erro: 
 http://www.cadcobol.com.br/negcodes.htm   
 
 http://www.cadcobol.com.br/db2_v_12_sqlcode_negativos.htm 
 
 https://www.ibm.com/docs/en/db2-for-zos/11?topic=codes-sql-error
-    
+##    
