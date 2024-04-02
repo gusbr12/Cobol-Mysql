@@ -82,7 +82,11 @@ fixa para colocar todos no mesmo diretório.
 - Direcionar um File-ID através de uma variável.
 
 ```COBOL
-                  77    WS77-ARQUIVO PIC X(13) VALUE "texto.txt".                             
+                  EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+
+                  77    WS77-ARQUIVO PIC X(13) VALUE "texto.txt".
+
+                  EXEC SQL END DECLARE SECTION END-EXEC.
 ```     
 - Variáveis que vão armazenar dados na memória devem ser declaradas 
                             fora da sessão de declaração do SQL.        
