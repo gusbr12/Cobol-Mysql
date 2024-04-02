@@ -95,16 +95,16 @@ fixa para colocar todos no mesmo diretório.
  
   
 ```COBOL                                                                      
-                      MOVE WS01-HORA   TO wsHORA                                                    
-                      MOVE ws01-DATA   TO wsDATA             
-                                                                                   
-                      EXEC SQL                                               
+                      MOVE WS01-HORA   TO wsHORA
+                      MOVE ws01-DATA   TO wsDATA
+
+                      EXEC SQL
                            DECLARE C1 CURSOR FOR
-                           SELECT TBLID, TBLData, TBLHora                           
+                           SELECT TBLID, TBLData, TBLHora
                            FROM SUA_TABELA
-                           WHERE (TBLDATA = :wsDATA AND   
+                           WHERE (TBLDATA = :wsDATA AND  
                            TBLHORA = :wsHORA)           
-                      END-EXEC                                           
+                      END-EXEC
 ```
 
 ##
