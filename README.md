@@ -82,7 +82,7 @@ fixa para colocar todos no mesmo diretório.
 - Direcionar um File-ID através de uma variável não será aceito.
 
 ```COBOL
-                  77    WS77-RV000000-IDX PIC X(13) VALUE "RV000000.IDX".                             
+                  77    WS77-ARQUIVO PIC X(13) VALUE "texto.txt".                             
 ```     
 - Variáveis que vão armazenar dados na memória devem ser declaradas 
                             fora da sessão de declaração do SQL.        
