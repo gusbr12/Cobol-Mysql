@@ -16,7 +16,8 @@
    + GnuCOBOL 3.1.2.0
    + GCC version 11.4.0
    + Mysql  Ver 8.0.35
-   + PostgreSQL 14.9    
+   + PostgreSQL 14.9
+   + mysql_fdw    
    + [Open Cobol ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL)
 
 ##
