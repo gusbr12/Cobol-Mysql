@@ -3,7 +3,9 @@
  
    Grande parte do programa contém o uso do pré-compilador [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, há a possibilidade
    encontrar complicações na instalação dependendo da distribuição linux usada e faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a 
-   funcionalidade do pré-compilador com o GNUCOBOL.Em sistemas REDHAT/CentOs há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em      breve sairá uma sessão especial para tal sistema.
+   funcionalidade do pré-compilador com o GNUCOBOL.
+   >[!NOTE]
+   >Em sistemas REDHAT/CentOs há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve sairá uma sessão especial para tal sistema.
 ##
 
 ### SISTEMA e PROGRAMAS
