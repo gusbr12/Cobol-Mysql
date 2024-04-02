@@ -1,4 +1,4 @@
-# COBOL - Conexão MYSQL via PostgreSQL remoto (unix).
+# COBOL - Conexão MYSQL via PostgreSQL remoto
 
  
    Grande parte do programa contém o uso do pré-compilador [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, há a possibilidade
