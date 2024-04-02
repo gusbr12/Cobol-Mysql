@@ -28,7 +28,7 @@
     pararem de funcionar (ler e gerar arquivos indexados está indisponivel na versão atual do GnuCobol (4.0)).    
  -  O pré-compilador Open Cobol ESQL possui um manual nos arquivos de instalações(README), para testar basta digitar o comando ocesql no terminal e deve retornar as infos do pré-com
     pilador.  
- -  Todos os programas foram instalados pelo terminal com excessão do OPEN COBOL ESQL - (sudo apt install(***)).
+ -  Todos os programas foram instalados pelo terminal com exceção do OPEN COBOL ESQL - (sudo apt install(***)).
 
  -  Será necessário editar as variáveis do sistema, caso não forem editadas, após a instalação de diversos programas ocorre um conflito de diretorios após uma compilação:
 
