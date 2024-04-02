@@ -11,10 +11,7 @@
        SELECT ARQ-GRAVA ASSIGN TO DISK
             ORGANIZATION IS LINE SEQUENTIAL
             ACCESS MODE IS SEQUENTIAL.
-
   
-       
-
        DATA DIVISION.
        FILE SECTION.                                        
 
@@ -23,25 +20,18 @@
            LABEL RECORDS ARE STANDARD
            VALUE OF FILE-ID IS WS01-NOME-GRAVA.           
 
-           01 ARQ-ESCREVE   PIC X(1700).
-               
-       
-
-       
-       
-       
+           01 ARQ-ESCREVE   PIC X(1700).                            
        
        WORKING-STORAGE   SECTION.
        
-       77  skipscreen                    pic x(04).
-                                            
-       01  CHAR-INPUT                    pic x.
+       77  skipscreen                    PIC X(04).                                            
+       01  CHAR-INPUT                    PIC X.
        01  D-REC.
-           05  D-ID            PIC  9(05).
-           05  FILLER              PIC  X.                      
-           05  D-data          pic  9(10).
-           05  FILLER              pic  x.                      
-           
+           05  D-ID                PIC 9(05).
+           05  FILLER              PIC X.                      
+           05  D-data              PIC 9(10).
+           05  FILLER              PIC X.                      
+           05  D-hora              PIC X(08).
            
 
 
@@ -69,10 +59,7 @@
        PROCEDURE  DIVISION.                                        
                                                                    
        ROTINA-PRINCIPAL.                      
-           
-           
-           
-                 
+  
            MOVE  "BANCONOME"                        TO   DBNAME.
            MOVE  "USUARIOS"                         TO   USERNAME.
            MOVE  "SENHABANCO"                       TO   PASSWD.
@@ -83,7 +70,6 @@
          
            PERFORM PROGSQL-MENU.     
   
-           
 
            EXEC SQL
                OPEN C1
