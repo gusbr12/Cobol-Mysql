@@ -164,15 +164,21 @@
            MOVE D-REC      TO  ARQ-ESCREVE        
            WRITE ARQ-ESCREVE
            CLOSE ARQ-GRAVA
-       STOP RUN.              
-              
+       STOP RUN.                            
        
-       PROGSQL-TESTE.
-                     
-           EXEC SQL
+       PROGSQL-TESTE.              
+       DISPLAY "INSIRA A DATA:" AT 0501
+       ACCEPT wsDATA            AT 0512
+       DISPLAY "INSIRA A HORA:" AT 0601
+       ACCEPT wsHORA            AT 0612
+
+
+       EXEC SQL
               DECLARE C1 CURSOR FOR
               SELECT TBLID, TBLDATA, TBLHora
-              FROM SUA_TABELA                                               
+              FROM SUA_TABELA
+              WHERE TBLDATA = :wsDATA AND
+              TBLHora = :wsHORA
               ORDER BY TBLID              
            END-EXEC.      
 
