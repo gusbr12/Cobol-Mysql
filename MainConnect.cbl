@@ -24,8 +24,10 @@
        
        WORKING-STORAGE   SECTION.
        
-       77  skipscreen                    PIC X(04).                                            
-       01  CHAR-INPUT                    PIC X.
+       77  skipscreen                    PIC X(04).                                                   
+       01  WS01-NOME-GRAVA.
+           03 FILLER               PIC X(08) VALUE "CONSULTA".
+           03 FILLER               PIC X(04) VALUE ".txt".
        01  D-REC.
            05  D-ID                PIC 9(05).
            05  FILLER              PIC X.                      
@@ -135,19 +137,18 @@
            PERFORM PROGSQL-TESTE.     
        
        PROGSQL-SKET.
-              DISPLAY " " AT 0501 WITH ERASE EOS.                       
+           DISPLAY " " AT 0501 WITH ERASE EOS.                       
            DISPLAY "TBLId: "           AT 0501
-           DISPLAY D-id            AT 0508            
-           DISPLAY "TBLData: "         AT 0801
-           DISPLAY D-data          AT 0810
-           DISPLAY "TBLHora: "         AT 0901
-           DISPLAY D-hora          AT 0910
+           DISPLAY D-id                AT 0508            
+           DISPLAY "TBLData: "         AT 0601
+           DISPLAY D-data              AT 0610
+           DISPLAY "TBLHora: "         AT 0701
+           DISPLAY D-hora              AT 0710
            
            
-      *--------------------------------------------
-      *    ACCEPT skipscreen WITH NO-ECHO AT 1801 
-           ACCEPT skipscreen FROM ESCAPE KEY.
-           DISPLAY skipscreen at 1815
+      *--------------------------------------------      
+           ACCEPT skipscreen  AT 1801
+           DISPLAY skipscreen AT 1815.
            
 
        IF  skipscreen = "@"
@@ -160,16 +161,14 @@
                 DISCONNECT ALL
            END-EXEC        
                                                                                                                                                                                       
-           MOVE D-REC      TO  ARQ-ESCREVE
-           
- 
+           MOVE D-REC      TO  ARQ-ESCREVE        
            WRITE ARQ-ESCREVE
            CLOSE ARQ-GRAVA
-           STOP RUN.              
+       STOP RUN.              
               
        
        PROGSQL-TESTE.
-       
+                     
            EXEC SQL
               DECLARE C1 CURSOR FOR
               SELECT TBLID, TBLDATA, TBLHora
