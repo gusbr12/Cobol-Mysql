@@ -19,7 +19,8 @@
    + GCC version 11.4.0
    + Mysql  Ver 8.0.35
    + PostgreSQL 14.9
-   + mysql_fdw    
+   + mysql_fdw (_extensão_)
+   + dblink(_extensão_)
    + [Open Cobol ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL)
 
 ##
@@ -73,6 +74,9 @@ fixa para colocar todos no mesmo diretório.
                    01  PASSWD                  PIC  X(10) VALUE SPACE.
                    EXEC SQL END DECLARE SECTION END-EXEC.
 ```
+
+    
+
 ##
 ### Erros possíveis  
 
