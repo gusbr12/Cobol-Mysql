@@ -50,7 +50,7 @@ fixa para colocar todos no mesmo diretório.
 
 ### COMPILAÇÃO e MODOS DE USO
 
- -  Para compilar os programas foi criado um script em ShellScript com todos os parâmetros necessários (scriptcomp.sh).
+ -  Para compilar os programas foi criado um script todos os parâmetros necessários ([scriptcomp.sh](https://github.com/gusbr12/Cobol-Mysql/blob/main/scriptcomp.sh)).
  -  O programa que obter conteúdo do OPEN ESQL deve ser compilado com os parâmetros '-static' e '-locesql'.
 
  -  O pré-compilador ESQL não vai reconhecer nenhuma variável que for usada com os comandos ESQL(EXEC SQL, SELECT, ETC) se estiver fora da área de declaração SQL.  
