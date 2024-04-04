@@ -107,7 +107,7 @@
       ******************************************************************
        ERROR-RTN.
       ******************************************************************
-           
+           DISPLAY " "                 AT 0101 WITH ERASE EOS
            DISPLAY "*** SQL ERROR ***" AT 0101
            DISPLAY "SQLCODE: " SQLCODE AT 0201. 
            EVALUATE SQLCODE
