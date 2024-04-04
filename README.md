@@ -131,7 +131,7 @@ fixa para colocar todos no mesmo diretório.
   |     <0       |  A instrução não foi executada devido a um erro de aplicativo, banco de dados, sistema ou rede|
  
   
-##
+
    
 
 ### Fonte dos códigos de erro: 
