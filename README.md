@@ -2,7 +2,7 @@
 
  
    Grande parte do programa contém o uso do pré-compilador [Open-Cobol-ESQL](https://github.com/opensourcecobol/Open-COBOL-ESQL), por parte, há a possibilidade
-   encontrar complicações na instalação dependendo da distribuição linux usada e faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a 
+   encontrar complicações na instalação dependendo da distribuição linux usada e ainda faltam alguns ajustes para acertar o ponto no qual facilite a instalação e a 
    funcionalidade do pré-compilador com o GNUCOBOL.
    >[!NOTE]
    >Em sistemas REDHAT/CentOs há muito para ser feito em questão de instalação do ESQL, pois, precisa de muitos pacotes de ferramentas, em breve sairá uma sessão especial para tal sistema.
@@ -14,7 +14,7 @@
    Para conectar COBOL a um banco de dados MySQL remoto via PostgreSQL, a estratégia geral envolve utilizar o PostgreSQL como uma camada intermediária. 
    O PostgreSQL funciona como um "ponte" entre o COBOL e o MySQL, facilitando a comunicação e a transferência de dados entre esses sistemas. 
    Isso pode ser alcançado usando recursos como Foreign Data Wrappers (FDWs) no PostgreSQL, que permitem que ele se conecte a fontes de dados externas, como o MySQL.
-
+   
 ##
 
 ### SISTEMA e PROGRAMAS
